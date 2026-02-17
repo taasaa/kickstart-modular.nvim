@@ -27,4 +27,12 @@ return {
       auto_update = false,
     },
   },
+
+  -- Override tokyonight: use storm variant (matches iTerm2)
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      vim.cmd.colorscheme 'tokyonight-storm'
+    end,
+  },
 }
