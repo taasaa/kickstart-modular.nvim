@@ -19,11 +19,11 @@ return {
     },
   },
 
-  -- Override tokyonight: use storm variant (matches iTerm2)
+  -- Tomorrow Night Bright theme
   {
-    'folke/tokyonight.nvim',
+    'chriskempson/vim-tomorrow-theme',
     config = function()
-      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'tomorrow-night-bright'
     end,
   },
 
