@@ -75,4 +75,6 @@ vim.o.confirm = true
 vim.opt.hlsearch = true   -- Highlight matches
 vim.opt.incsearch = true  -- Jump while typing
 
+-- Search settings (moved to lua/custom/options.lua)
+
 -- vim: ts=2 sts=2 sw=2 et

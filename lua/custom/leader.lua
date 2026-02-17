@@ -1,5 +1,5 @@
--- Custom leader key configuration
--- Override the default <space> leader to comma
+-- Custom leader key and font configuration
 
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
+vim.g.have_nerd_font = true
