@@ -10,13 +10,13 @@ return {
     },
   },
 
-  -- Override treesitter config: disable auto_install (causes startup delay)
+  -- Override treesitter: fix main module (upstream has bug: configs vs config)
   {
     'nvim-treesitter/nvim-treesitter',
-    opts = function(_, opts)
-      opts.auto_install = false
-      return opts
-    end,
+    main = 'nvim-treesitter.config',
+    opts = {
+      auto_install = false,
+    },
   },
 
   -- Override LSP config: disable mason-tool-installer (registry sync issues)
