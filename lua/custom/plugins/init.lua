@@ -19,15 +19,6 @@ return {
     },
   },
 
-  -- Override LSP config: disable mason-tool-installer (registry sync issues)
-  {
-    'williamboman/mason-tool-installer.nvim',
-    opts = {
-      ensure_installed = {},
-      auto_update = false,
-    },
-  },
-
   -- Override tokyonight: use storm variant (matches iTerm2)
   {
     'folke/tokyonight.nvim',
