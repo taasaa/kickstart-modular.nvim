@@ -52,4 +52,15 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {},
   },
+
+  -- Custom keybindings
+  {
+    'folke/which-key.nvim',
+    opts = {
+      defaults = {
+        ['<leader>,'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
+        ['<leader>sf'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
+      },
+    },
+  },
 }
