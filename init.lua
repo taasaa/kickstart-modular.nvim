@@ -87,6 +87,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Custom leader is set in lua/custom/leader.lua
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -98,6 +99,9 @@ require 'options'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
+
+-- [[ Custom leader key ]]
+require 'custom.leader'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
