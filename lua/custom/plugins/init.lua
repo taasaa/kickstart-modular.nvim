@@ -56,11 +56,10 @@ return {
   -- Custom keybindings
   {
     'folke/which-key.nvim',
-    opts = {
-      defaults = {
-        ['<leader>,'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
-        ['<leader>sf'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
-      },
-    },
+    config = function()
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>,', builtin.find_files, { desc = 'Find Files' })
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Find Files' })
+    end,
   },
 }
