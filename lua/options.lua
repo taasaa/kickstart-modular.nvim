@@ -71,4 +71,8 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Search settings
+vim.opt.hlsearch = true   -- Highlight matches
+vim.opt.incsearch = true  -- Jump while typing
+
 -- vim: ts=2 sts=2 sw=2 et
