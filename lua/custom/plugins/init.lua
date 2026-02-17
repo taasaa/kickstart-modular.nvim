@@ -45,4 +45,11 @@ return {
 
   -- vim-repeat - Repeat plugin actions
   { 'tpope/vim-repeat' },
+
+  -- render-markdown - Render markdown in neovim
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
+  },
 }
