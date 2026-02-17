@@ -109,6 +109,7 @@ require 'keymaps'
 -- [[ Custom leader key, font, and options ]]
 require 'custom.leader'
 require 'custom.options'
+require 'custom.keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
