@@ -8,6 +8,13 @@ return {
     keys = {
       { '<leader>e', ':Neotree toggle<CR>', desc = 'Toggle File Explorer', silent = true },
     },
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true, -- show hidden files by default
+        },
+      },
+    },
   },
 
   -- Override treesitter: fix main module (upstream has bug: configs vs config)
@@ -46,6 +53,21 @@ return {
   -- vim-repeat - Repeat plugin actions
   { 'tpope/vim-repeat' },
 
+  -- Comment.nvim - Smart commenting
+  {
+    'numToStr/Comment.nvim',
+    keys = {
+      { 'gc', mode = { 'n', 'v' }, desc = 'Comment toggle' },
+      { 'gcc', desc = 'Comment line toggle' },
+    },
+    opts = {
+      mappings = {
+        basic = true,
+        extra = true,
+      },
+    },
+  },
+
   -- render-markdown - Render markdown in neovim
   {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -60,6 +82,26 @@ return {
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>,', builtin.find_files, { desc = 'Find Files' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Find Files' })
+      vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'List Buffers' })
     end,
+  },
+
+  -- Session manager - auto-save/restore per project
+  {
+    'Shatur/neovim-session-manager',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = 'VimEnter',
+    config = function()
+      local session_manager = require('session_manager')
+      session_manager.setup({
+        autoload_last_session = true,
+        sessions_dir = vim.fn.stdpath('data') .. '/sessions/',
+        session_filetype_whitelist = { 'lua', 'python', 'json', 'sh', 'yaml', 'yml', 'toml', 'md', 'txt' },
+      })
+    end,
+    keys = {
+      { '<leader>sl', '<cmd>SessionManager load_session<cr>', desc = 'Load Session' },
+      { '<leader>ss', '<cmd>SessionManager save_current_session<cr>', desc = 'Save Session' },
+    },
   },
 }
