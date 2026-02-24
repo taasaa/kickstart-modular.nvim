@@ -9,6 +9,9 @@ return {
       { '<leader>e', ':Neotree toggle<CR>', desc = 'Toggle File Explorer', silent = true },
     },
     opts = {
+      window = {
+        width = 30,
+      },
       filesystem = {
         filtered_items = {
           visible = true, -- show hidden files by default
